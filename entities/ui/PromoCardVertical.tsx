@@ -10,7 +10,7 @@ export default function PromoCardVertical() {
                 <p className='font-medium text-[16px] text-[#909090]'>
                     The new 15-inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display
                 </p>
-                <Button text={'Shop Now'}/>
+                <Button text={'Shop Now'} borderColor={'#000000'} textColor={'#000000'}/>
             </div>
             <div className='w-[300px]'>
                 <Image src={MacBook} alt={'macbook'}/>

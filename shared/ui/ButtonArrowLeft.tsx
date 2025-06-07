@@ -3,7 +3,7 @@ import ButtonArrowLeftIcon from '../../public/svg/ButtonArrows/buttonLeftArrow.s
 
 export default function ButtonArrowLeft() {
     return (
-        <button>
+        <button className='hover:cursor-pointer'>
             <Image src={ButtonArrowLeftIcon} alt={'buttonArrowLeft'} />
         </button>
     )

@@ -13,7 +13,7 @@ export default function Category() {
         <div className='w-100% h-[624px] lg:h-[352px] bg-[#FAFAFA] flex flex-col justify-center px-[160px]'>
             <div className='w-[inherit] flex justify-between'>
                 <div>
-                    <p>Browse by Category</p>
+                    <p className='font-medium text-2xl'>Browse by Category</p>
                 </div>
                 <div>
                     <ButtonArrowLeft/>
