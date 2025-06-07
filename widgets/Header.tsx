@@ -1,7 +1,7 @@
 
 import InputSearch from "@/features/search/ui/InputSearch";
 import NavLinkMenu from "@/shared/ui/NavLinkMenu";
-import CardIconButton from "@/features/toogle-card/ui/CardIconButton";
+import IconButtonMenu from "@/shared/ui/IconButtonMenu";
 
 export default function Header() {
     return (
@@ -9,7 +9,7 @@ export default function Header() {
             <h2>TechStore</h2>
             <InputSearch/>
             <NavLinkMenu/>
-            <CardIconButton/>
+            <IconButtonMenu/>
         </div>
     )
 }
