@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Button from "@/shared/ui/Button";
 import IphoneImage from '../../../public/svg/productCard/newArrival/iphone 14 pro card.png'
 import LikeIcon from '../../../public/svg/likes/like.svg'
 
 interface ProductCardProps {
-    imageProduct: string;
+    imageProduct: StaticImageData;
     imageAlt: string;
     nameProduct: string;
     price: number;
