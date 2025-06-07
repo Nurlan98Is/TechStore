@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AppleVisionPro from '../../public/appleVisionProHalf.png'
+import AppleVisionPro from '../../../public/appleVisionProHalf.png'
 
 export default function PromoCardBlack() {
     return (

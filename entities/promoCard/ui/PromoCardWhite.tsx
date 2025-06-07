@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AirPodsPro from '../../public/appleAriPodsProHalf.png'
+import AirPodsPro from '../../../public/appleAriPodsProHalf.png'
 
 export default function PromoCardWhite() {
     return (

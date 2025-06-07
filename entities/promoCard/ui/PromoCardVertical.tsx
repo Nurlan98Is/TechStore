@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MacBook from '../../public/MacBook Pro 14.png'
+import MacBook from '../../../public/MacBook Pro 14.png'
 import Button from "@/shared/ui/Button";
 
 export default function PromoCardVertical() {

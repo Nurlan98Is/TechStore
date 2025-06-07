@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PlayStation from '../../public/PlayStationHalf.png'
+import PlayStation from '../../../public/PlayStationHalf.png'
 
 export default function PromoCardHorizontal() {
     return (
