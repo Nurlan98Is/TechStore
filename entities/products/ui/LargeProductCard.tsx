@@ -13,7 +13,7 @@ export default function LargeProductCard({ image, background, children}: LargePr
             style={{
                 backgroundColor: background,
             }}
-            className={`h-[640px] w-[360px] flex flex-col items-center justify-start`}>
+            className={`h-[640px] w-[100%] flex flex-col items-center justify-start`}>
             <div className='h-[360px] w-[360px]'>
                 <Image src={image} alt='img' />
             </div>

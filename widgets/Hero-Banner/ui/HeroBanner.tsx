@@ -7,10 +7,10 @@ import Button from "@/shared/ui/Button";
 export default function HeroBanner() {
     return (
         <div className='flex justify-center items-center w-[100%] h-[632px] bg-[#211C24]'>
-            <div className='flet flex-col items-start w-[724px] h-[256px] text-left gap-[24px]'>
+            <div className='flet flex-col items-start justify-between w-[724px] h-[256px] text-left'>
                 <p className='text-[#FFFFFF] text-2xl '>Pro.Beyond</p>
-                <h1 className='text-white text-[96px]'>Iphone 14 <span>Pro</span></h1>
-                <p className='text-[#909090] text-lg'>Create to change everything for the better. For everyone</p>
+                <p className='text-white text-[96px] font-extralight'>Iphone 14 <span>Pro</span></p>
+                <p className='text-[#909090] text-lg pb-[20px]'>Create to change everything for the better. For everyone</p>
                 <Link href='/'>
                     <Button text={'Shop Now'} borderColor={'#FFFFFF'} textColor={'#FFFFFF'}/>
                 </Link>

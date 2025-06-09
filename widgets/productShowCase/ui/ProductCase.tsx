@@ -8,7 +8,7 @@ import GalaxyZFold5ProductImage from '../../../public/svg/productCard/newArrival
 import GalaxyBudsProductImage from '../../../public/svg/productCard/newArrival/GalaxyBuds.png';
 import AppleIpadProudctImage from '../../../public/svg/productCard/newArrival/AppleIPad.png';
 
-export default function ProductShowCase() {
+export default function ProductCase() {
     return (
         <div className='w-full px-4 py-14 md:px-40 md:py-14 '>
             <div className="mb-8 flex items-start gap-8">
