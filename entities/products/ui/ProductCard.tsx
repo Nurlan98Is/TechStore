@@ -7,7 +7,7 @@ interface ProductCardProps {
     imageAlt: string;
     nameProduct: string;
     price: number;
-    discount: boolean;
+    discount?: boolean;
     discountPrice?: number;
 }
 
@@ -15,7 +15,8 @@ export default function ProductCard(
         { imageProduct,
          imageAlt,
          nameProduct,
-         price, discount,
+         price,
+         discount = false,
          discountPrice,
         } : ProductCardProps ) {
 
