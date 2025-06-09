@@ -1,6 +1,13 @@
-import Image from "next/image";
+import Image ,{StaticImageData} from "next/image";
+import { ReactNode } from "react";
 
-export default function LargeProductCard({ image, background,children}) {
+interface LargeProductCardProps {
+    image: StaticImageData;
+    background: string;
+    children?: ReactNode;
+}
+
+export default function LargeProductCard({ image, background, children}: LargeProductCardProps) {
     return (
         <div
             style={{
