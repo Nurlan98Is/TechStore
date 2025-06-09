@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from "next/image";
 import Button from "@/shared/ui/Button";
-import IphoneImage from '../../../public/svg/productCard/newArrival/iphone 14 pro card.png'
 import LikeIcon from '../../../public/svg/likes/like.svg'
 
 interface ProductCardProps {
@@ -10,7 +9,12 @@ interface ProductCardProps {
     price: number;
 }
 
-export default function ProductCard( {imageProduct, imageAlt, nameProduct, price} : ProductCardProps ) {
+export default function ProductCard(
+        { imageProduct,
+         imageAlt,
+         nameProduct,
+         price,
+        } : ProductCardProps ) {
     return (
         <div className='h-[432px] w-[268px] bg-[#F6F6F6] rounded-[9px] flex flex-col items-center justify-around'>
             <div className='w-[90%] flex items-center justify-end'>
