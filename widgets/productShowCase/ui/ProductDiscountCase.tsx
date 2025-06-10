@@ -6,10 +6,10 @@ import IphoneProWhiteImg from '../../../public/svg/productCard/newArrival/Iphone
 
 export default function ProductDiscountCase() {
     return (
-        <div className='w-[100%] h-[656px]'>
-            <div className='px-[160px] py-[80px] flex flex-col'>
+        <div className='w-[100%] h-[896px] md:h-[656px]'>
+            <div className='md:px-[160px] md:py-[80px] flex flex-col'>
                 <p className='font-medium text-2xl mb-[32px]'>Discounts up to -50%</p>
-                <div className='flex justify-between'>
+                <div className='grid grid-cols-2 gap-4 pl-[10px] md:flex md:justify-between'>
                     <ProductCard
                         imageProduct={IphoneProGoldImg}
                         imageAlt={'iphoneProWhite'}

@@ -21,14 +21,14 @@ export default function ProductCard(
         } : ProductCardProps ) {
 
     return (
-        <div className='h-[432px] w-[268px] bg-[#F6F6F6] rounded-[9px] flex flex-col items-center justify-around'>
+        <div className='h-[352px] w-[164px] md:h-[432px] md:w-[268px] bg-[#F6F6F6] rounded-[9px] flex flex-col items-center justify-around'>
             <div className='w-[90%] flex items-center justify-end'>
                 <button className='hover:cursor-pointer'>
                     <Image src={LikeIcon} alt={'likeIcon'}/>
                 </button>
             </div>
-            <div className='h-[160px] w-[160px]'>
-                <Image src={imageProduct} alt={imageAlt} className='h-[160px] w-[160px]'/>
+            <div className='h-[104px] w-[104px] md:h-[160px] md:w-[160px]'>
+                <Image src={imageProduct} alt={imageAlt} className='h-[104px] w-[104px] md:h-[160px] md:w-[160px]'/>
             </div>
             <div className='h-[160px] text-center flex flex-col items-center justify-between'>
                 <div className='h-[88px] flex flex-col items-center justify-between'>
@@ -49,7 +49,7 @@ export default function ProductCard(
                             </p>
                         )}
                 </div>
-                <Button text={'Buy Now'} borderColor={'black'} backgroundColor={'black'} textColor={'white'}/>
+                <Button text={'Buy Now'} borderColor={'black'} backgroundColor={'black'} textColor={'white'} width={140}/>
             </div>
         </div>
     )

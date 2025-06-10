@@ -10,7 +10,7 @@ import ButtonArrowRight from "@/shared/ui/ButtonArrowRight";
 
 export default function Category() {
     return (
-        <div className='w-100% h-[624px] lg:h-[352px] bg-[#FAFAFA] flex flex-col justify-center px-[160px]'>
+        <div className='w-100% h-[624px] lg:h-[352px] bg-[#FAFAFA] flex flex-col justify-center items-center md:items-stretch md:px-[160px]'>
             <div className='w-[inherit] flex justify-between'>
                 <div>
                     <p className='font-medium text-2xl'>Browse by Category</p>
@@ -20,7 +20,7 @@ export default function Category() {
                     <ButtonArrowRight/>
                 </div>
             </div>
-            <div className='flex justify-around'>
+            <div className='grid grid-rows-3 grid-cols-2 md:flex md:justify-between gap-4'>
                 <CategoryCard image={PhoneIcon} alt={'phoneIcon'} text={'Phone'}/>
                 <CategoryCard image={SmartWatches} alt={'smartClock'} text={'Smart Watches'}/>
                 <CategoryCard image={CameraIcon} alt={'cameraIcon'} text={'Cameras'}/>

@@ -8,7 +8,7 @@ import Button from "@/shared/ui/Button";
 
 export default function BannerPromotion() {
     return (
-        <div className='h-[580px] w-[100%] flex justify-between items-center bg-gradient-to-r from-[#2E2E2E] to-[#000000]'>
+        <div className=' hidden h-[580px] w-[100%] md:flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-[#2E2E2E] to-[#000000]'>
             <div>
                 <Image src={LapTopImage} alt={'lapTopBanner'}/>
                 <Image src={MiniTableImg} alt={'miniTableBanner'} />

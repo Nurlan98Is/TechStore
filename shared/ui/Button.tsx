@@ -4,13 +4,15 @@ interface ButtonProps {
     borderColor?: string;
     textColor?: string;
     backgroundColor?: string;
+    width?: number | string;
 }
 
-export default function Button ( { text, borderColor, textColor, backgroundColor } : ButtonProps) {
+export default function Button ( { text, borderColor, textColor, backgroundColor, width} : ButtonProps) {
     return (
         <button
-            className={`h-[56px] w-[184px] rounded-[6px] border font-medium text-[16px] hover:cursor-pointer`}
+            className={`h-[56px] w-[80%] md:w-[184px] rounded-[6px] border font-medium text-[16px] hover:cursor-pointer`}
             style={{
+                width: width,
                 backgroundColor: backgroundColor,
                 borderColor: borderColor,
                 color: textColor,

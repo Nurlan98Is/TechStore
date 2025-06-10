@@ -7,18 +7,18 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <div className='h-[504px] w-[100%] bg-black'>
-            <div className='px-[160px] py-[104px]  text-white'>
-                <div className=' h-[256px] w-[100%] flex'>
-                    <div className='w-[384px]'>
-                        <p className='font-bold text-[32px]'>TechStore</p>
-                        <p className='mt-[20px]'>
+        <div className='h-[818px] md:h-[504px] w-[100%] bg-black'>
+            <div className='px-[48px] py-[32px] md:px-[160px] md:py-[104px] flex flex-col items-center md:block  text-white'>
+                <div className='h-[663px] md:h-[256px] w-[100%] flex flex-col md:flex-row'>
+                    <div className='w-[311px] md:w-[384px]'>
+                        <p className='font-bold text-[32px] text-center md:text-left'>TechStore</p>
+                        <p className='mt-[20px] text-center md:text-left'>
                             We are a residential interior design firm located in Portland. Our boutique-studio offers more than
                         </p>
                     </div>
-                    <div className='w-[100%] flex justify-around'>
-                        <div className='flex flex-col justify-around'>
-                            <p className='font-bold'>Service</p>
+                    <div className='w-[100%] h-[full] flex flex-col items-center md:items-stretch md:flex-row justify-around text-[#CFCFCF]'>
+                        <div className='flex flex-col justify-around items-center md:items-start'>
+                            <p className='font-bold text-white'>Service</p>
                             <p>Bonus program</p>
                             <p>Gift card</p>
                             <p>Credit and payment</p>
@@ -26,8 +26,8 @@ export default function Footer() {
                             <p>Non-cash account</p>
                             <p>Payment</p>
                         </div>
-                        <div className='flex flex-col justify-around'>
-                            <p className='font-bold'>Assistance to the buyer</p>
+                        <div className='flex flex-col justify-around items-center md:items-start'>
+                            <p className='font-bold text-white'>Assistance to the buyer</p>
                             <p>Find an order</p>
                             <p>Terms of delivery</p>
                             <p>Exchange and returns of goods</p>

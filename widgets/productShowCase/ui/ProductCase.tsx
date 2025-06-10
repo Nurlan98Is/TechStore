@@ -22,7 +22,7 @@ export default function ProductCase() {
                     <span>Featured Products</span>
                 </button>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4'>
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
                 <ProductCard
                     imageProduct={Iphone14ProProductImage}
                     imageAlt={'iphone 14 pro'}

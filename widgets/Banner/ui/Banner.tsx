@@ -4,21 +4,21 @@ import PromoCardBlack from "@/entities/promoCard/ui/PromoCardBlack";
 import PromoCardWhite from "@/entities/promoCard/ui/PromoCardWhite";
 export default function Banner() {
     return (
-        <div className='w-[100%] h-[600px] grid grid-cols-4 grid-rows-8'>
-            <div className='col-span-2 row-span-5'>
+        <div className='w-[100%] h-[1673px] lg:h-[600px] lg:grid lg:grid-cols-4 lg:grid-rows-8'>
+            <div className='lg:col-span-2 lg:row-span-5'>
                 <PromoCardHorizontal/>
             </div>
 
             {/* Вертикальная карточка (занимает 1 колонку и 2 строки) */}
-            <div className='col-span-2 row-span-8'>
+            <div className='lg:col-span-2 lg:row-span-8'>
                 <PromoCardVertical/>
             </div>
 
             {/* Маленькие карточки (занимают по 1 колонке) */}
-            <div className='col-span-1 row-span-5'>
+            <div className='lg:col-span-1 lg:row-span-5'>
                 <PromoCardWhite/>
             </div>
-            <div className='col-span-1 row-span-5'>
+            <div className='lg:col-span-1 lg:row-span-5'>
                 <PromoCardBlack/>
             </div>
         </div>
