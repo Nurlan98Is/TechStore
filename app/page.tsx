@@ -6,6 +6,7 @@ import ProductCase from "@/widgets/productShowCase/ui/ProductCase";
 import ProductsCardRow from "@/widgets/ProductCardsRow/ui/ProductCardsRow";
 import ProductDiscountCase from "@/widgets/productShowCase/ui/ProductDiscountCase";
 import BannerPromotion from "@/widgets/Banner/ui/BannerPromotion";
+import Footer from "@/widgets/Footer/ui/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <ProductsCardRow/>
         <ProductDiscountCase/>
         <BannerPromotion/>
+      <Footer/>
     </div>
   );
 }
