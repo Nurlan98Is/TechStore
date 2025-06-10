@@ -5,6 +5,7 @@ import Category from "@/widgets/Category/ui/Category";
 import ProductCase from "@/widgets/productShowCase/ui/ProductCase";
 import ProductsCardRow from "@/widgets/ProductCardsRow/ui/ProductCardsRow";
 import ProductDiscountCase from "@/widgets/productShowCase/ui/ProductDiscountCase";
+import BannerPromotion from "@/widgets/Banner/ui/BannerPromotion";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ProductCase/>
         <ProductsCardRow/>
         <ProductDiscountCase/>
+        <BannerPromotion/>
     </div>
   );
 }
