@@ -1,18 +1,27 @@
 'use client'
+import {ReactNode} from "react";
+
 interface ButtonProps {
+    children: string
     text: string;
-    borderColor?: string;
-    textColor?: string;
-    backgroundColor?: string;
-    width?: number | string;
+    borderColor: string;
+    textColor: string;
+    backgroundColor: string;
+    width: number | string;
+    fontSize: number | string;
+    className: string
+    onClick: () => void
 }
 
-export default function Button ( { text, borderColor, textColor, backgroundColor, width} : ButtonProps) {
+export default function Button ( { children, text, borderColor, textColor, backgroundColor, width, fontSize, className, onClick} : Partial<ButtonProps>) {
+
     return (
         <button
-            className={`h-[56px] w-[80%] md:w-[184px] rounded-[6px] border font-medium text-[16px] hover:cursor-pointer`}
+            className={`${className} h-[56px] w-[80%] md:w-[184px] rounded-[6px] border font-medium text-[16px] hover:cursor-pointer`}
+            onClick={onClick}
             style={{
-                width: width,
+                fontSize: fontSize,
+                width: `${width}px`,
                 backgroundColor: backgroundColor,
                 borderColor: borderColor,
                 color: textColor,
@@ -30,6 +39,7 @@ export default function Button ( { text, borderColor, textColor, backgroundColor
             }}
         >
             {text}
+            {children}
         </button>
     )
 }

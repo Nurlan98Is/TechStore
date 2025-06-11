@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ButtonArrowRightIcon from '../../public/svg/ButtonArrows/buttonRightArrow.svg'
+import ButtonArrowRightIcon from '@/public/svg/Buttons/buttonRightArrow.svg'
 
 export default function ButtonArrowRight() {
     return (

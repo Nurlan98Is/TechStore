@@ -2,7 +2,7 @@
 import InputSearch from "@/features/search/ui/InputSearch";
 import NavLinkMenu from "@/shared/ui/NavLinkMenu";
 import IconButtonMenu from "@/shared/ui/IconButtonMenu";
-import ButtonBurgerSvg from '../public/svg/buttonBurger/buttonBurger.svg'
+import ButtonBurgerSvg from '../public/svg/Buttons/buttonBurger.svg'
 import Image from "next/image";
 
 export default function Header() {
