@@ -28,7 +28,7 @@ export default function ProductCard(
                 </button>
             </div>
             <div className='h-[104px] w-[104px] md:h-[160px] md:w-[160px]'>
-                <Image src={imageProduct} alt={imageAlt} className='h-[104px] w-[104px] md:h-[160px] md:w-[160px]'/>
+                <Image src={imageProduct} alt={imageAlt} width={160} height={160} className='h-[104px] w-[104px] md:h-[160px] md:w-[160px]'/>
             </div>
             <div className='h-[160px] text-center flex flex-col items-center justify-between'>
                 <div className='h-[88px] flex flex-col items-center justify-between'>

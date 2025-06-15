@@ -27,7 +27,7 @@ export default function ProductCase() {
                     imageProduct={Iphone14ProProductImage}
                     imageAlt={'iphone 14 pro'}
                     nameProduct={'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)'}
-                    price={900}
+                    price={799}
                 />
                 <ProductCard
                     imageProduct={BlackMagicPocketCameraImage}

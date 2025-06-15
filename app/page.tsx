@@ -8,14 +8,17 @@ import ProductDiscountCase from "@/widgets/productShowCase/ui/ProductDiscountCas
 import BannerPromotion from "@/widgets/Banner/ui/BannerPromotion";
 import Footer from "@/widgets/Footer/ui/Footer";
 
-export default function Home() {
+export default async function Home() {
+    const response = await fetch("https://fakestoreapi.in/api/products")
+    const data = await response.json();
+    console.log(data)
   return (
     <div>
       <Header/>
         <HeroBanner/>
         <Banner/>
       <Category/>
-        <ProductCase/>
+        <ProductCase data={data} />
         <ProductsCardRow/>
         <ProductDiscountCase/>
         <BannerPromotion/>
