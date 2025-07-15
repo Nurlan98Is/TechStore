@@ -21,7 +21,7 @@ export default function AuthToolTip() {
                 >
                     Sing in or registration
                 </Button>
-            <ModalWindowAuth isOpen={isOpen}  onClick={()=>{setIsOpen(false)}}/>
+                <ModalWindowAuth isOpen={isOpen}  onClick={()=>{setIsOpen(false)}}/>
         </div>
     )
 }

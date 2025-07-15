@@ -14,7 +14,6 @@ export default function UserAccess() {
                height={24}
                className='hover:cursor-pointer'
            />
-            <AuthToolTip/>
         </>
     )
         }

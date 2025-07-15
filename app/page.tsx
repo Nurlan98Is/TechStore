@@ -7,6 +7,9 @@ import ProductsCardRow from "@/widgets/ProductCardsRow/ui/ProductCardsRow";
 import ProductDiscountCase from "@/widgets/productShowCase/ui/ProductDiscountCase";
 import BannerPromotion from "@/widgets/Banner/ui/BannerPromotion";
 import Footer from "@/widgets/Footer/ui/Footer";
+import ModalWindowAuth from "@/entities/modalWindow/ModalWindowAuth/ui/ModalWindowAuth";
+import AuthToolTip from "@/entities/user/auth/AuthToolTip";
+
 
 export default async function Home() {
     const response = await fetch("https://fakestoreapi.in/api/products")
@@ -17,6 +20,7 @@ export default async function Home() {
       <Header/>
         <HeroBanner/>
         <Banner/>
+        <AuthToolTip/>
       <Category/>
         <ProductCase data={data} />
         <ProductsCardRow/>
