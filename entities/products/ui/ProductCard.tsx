@@ -1,8 +1,11 @@
+'use client'
 import Image, { StaticImageData } from "next/image";
 import Button from "@/shared/ui/Button";
 import LikeIcon from '../../../public/svg/likes/like.svg'
+import {useRouter} from "next/navigation";
 
 interface ProductCardProps {
+    id: string
     imageProduct: StaticImageData;
     imageAlt: string;
     nameProduct: string;
@@ -12,13 +15,16 @@ interface ProductCardProps {
 }
 
 export default function ProductCard(
-        { imageProduct,
+        {imageProduct,
          imageAlt,
          nameProduct,
          price,
          discount = false,
          discountPrice,
+         id
         } : ProductCardProps ) {
+
+    const router = useRouter();
 
     return (
         <div className='h-[352px] w-[164px] md:h-[432px] md:w-[268px] bg-[#F6F6F6] rounded-[9px] flex flex-col items-center justify-around'>
@@ -49,7 +55,7 @@ export default function ProductCard(
                             </p>
                         )}
                 </div>
-                <Button text={'Buy Now'} borderColor={'black'} backgroundColor={'black'} textColor={'white'} width={140}/>
+                <Button onClick={() => router.push(`/product/${id}`)} text={'Buy Now'} borderColor={'black'} backgroundColor={'black'} textColor={'white'} width={140}/>
             </div>
         </div>
     )

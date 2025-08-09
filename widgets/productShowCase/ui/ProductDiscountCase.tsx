@@ -17,6 +17,7 @@ export default function ProductDiscountCase() {
                         price={1437}
                         discount={true}
                         discountPrice={717}
+                        id={'10'}
                     />
                     <ProductCard
                         imageProduct={AirPodsProMaxImg}
@@ -25,6 +26,7 @@ export default function ProductDiscountCase() {
                         price={549}
                         discount={true}
                         discountPrice={225}
+                        id={'11'}
                     />
                     <ProductCard
                         imageProduct={AppleWatchImg}
@@ -33,6 +35,7 @@ export default function ProductDiscountCase() {
                         price={399}
                         discount={true}
                         discountPrice={199}
+                        id={'12'}
                     />
                     <ProductCard
                         imageProduct={IphoneProWhiteImg}
@@ -41,6 +44,7 @@ export default function ProductDiscountCase() {
                         price={1499}
                         discount={true}
                         discountPrice={749}
+                        id={'13'}
                     />
                 </div>
             </div>
