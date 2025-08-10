@@ -10,8 +10,6 @@ export default function CartPage() {
                 <div className='xl:w-[536px] xl:h-[100%] mr-[40px]'>
                     <p className='font-bold text-[20px] mb-[40px]'>Shopping Cart</p>
                     <ProductCardInCart/>
-                    <ProductCardInCart/>
-                    <ProductCardInCart/>
                 </div>
 
                 <div className='border border-[#EDEDED] xl:w-[536px] xl:py-[56px] xl:px-[64px] xl:h-[100%]'>

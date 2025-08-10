@@ -7,6 +7,7 @@ import SamsungGalaxyWatch6ProductImage from '../../../public/svg/productCard/new
 import GalaxyZFold5ProductImage from '../../../public/svg/productCard/newArrival/GalaxyF5Fold.png';
 import GalaxyBudsProductImage from '../../../public/svg/productCard/newArrival/GalaxyBuds.png';
 import AppleIpadProudctImage from '../../../public/svg/productCard/newArrival/AppleIPad.png';
+import {ProductsArray} from "@/productsArray/Products";
 
 export default function ProductCase() {
 
@@ -25,27 +26,36 @@ export default function ProductCase() {
                 </button>
             </div>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-                <ProductCard
-                    imageProduct={Iphone14ProProductImage}
-                    imageAlt={'iphone 14 pro'}
-                    nameProduct={'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)'}
-                    price={799}
-                    id={'2'}
-                />
-                <ProductCard
-                    imageProduct={BlackMagicPocketCameraImage}
-                    imageAlt={'Black Magic Pocket'}
-                    nameProduct={'Blackmagic Pocket Cinema Camera 6k'}
-                    price={2535}
-                    id={'3'}
-                />
-                <ProductCard
-                    imageProduct={AppleWatchesProductImage}
-                    imageAlt={'Apple Watches'}
-                    nameProduct={'Apple Watch Series 9 GPS 41mm Starlight Aluminium Case'}
-                    price={399}
-                    id={'4'}
-                />
+                {ProductsArray.map((product) => (
+                    <ProductCard
+                        imageProduct={product.img}
+                        imageAlt={'product'}
+                        nameProduct={product.name}
+                        price={product.price}
+                        id={product.id}
+                    />
+                ))}
+                {/*<ProductCard*/}
+                {/*    imageProduct={Iphone14ProProductImage}*/}
+                {/*    imageAlt={'iphone 14 pro'}*/}
+                {/*    nameProduct={'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)'}*/}
+                {/*    price={799}*/}
+                {/*    id={'2'}*/}
+                {/*/>*/}
+                {/*<ProductCard*/}
+                {/*    imageProduct={BlackMagicPocketCameraImage}*/}
+                {/*    imageAlt={'Black Magic Pocket'}*/}
+                {/*    nameProduct={'Blackmagic Pocket Cinema Camera 6k'}*/}
+                {/*    price={2535}*/}
+                {/*    id={'3'}*/}
+                {/*/>*/}
+                {/*<ProductCard*/}
+                {/*    imageProduct={AppleWatchesProductImage}*/}
+                {/*    imageAlt={'Apple Watches'}*/}
+                {/*    nameProduct={'Apple Watch Series 9 GPS 41mm Starlight Aluminium Case'}*/}
+                {/*    price={399}*/}
+                {/*    id={'4'}*/}
+                {/*/>*/}
                 <ProductCard
                     imageProduct={AirPodsProProductImage}
                     imageAlt={'Air Pods'}

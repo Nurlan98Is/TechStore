@@ -3,6 +3,10 @@ import Image, { StaticImageData } from "next/image";
 import Button from "@/shared/ui/Button";
 import LikeIcon from '../../../public/svg/likes/like.svg'
 import {useRouter} from "next/navigation";
+import {useDispatch, useSelector} from "react-redux";
+import {addCart} from "@/features/cart/model/cartSlice";
+import {addWishList} from "@/features/open-wishlist/model/wishListSlice";
+import {RootState} from "@/store/store";
 
 interface ProductCardProps {
     id: string
@@ -26,10 +30,13 @@ export default function ProductCard(
 
     const router = useRouter();
 
+    const dispatch = useDispatch();
+    const itemsInCart = useSelector((state: RootState) => state.cart)
+
     return (
         <div className='h-[352px] w-[164px] md:h-[432px] md:w-[268px] bg-[#F6F6F6] rounded-[9px] flex flex-col items-center justify-around'>
             <div className='w-[90%] flex items-center justify-end'>
-                <button className='hover:cursor-pointer'>
+                <button className='hover:cursor-pointer' onClick={() => dispatch(addWishList({id, name: nameProduct, price, img: imageProduct}))}>
                     <Image src={LikeIcon} alt={'likeIcon'}/>
                 </button>
             </div>
@@ -55,7 +62,9 @@ export default function ProductCard(
                             </p>
                         )}
                 </div>
-                <Button onClick={() => router.push(`/product/${id}`)} text={'Buy Now'} borderColor={'black'} backgroundColor={'black'} textColor={'white'} width={140}/>
+                <Button onClick={() => dispatch(addCart({id, name: nameProduct, price, img: imageProduct, quantity: 1}))} borderColor={'black'} backgroundColor={'black'} textColor={'white'} width={140}>
+                    Buy now
+                </Button>
             </div>
         </div>
     )
