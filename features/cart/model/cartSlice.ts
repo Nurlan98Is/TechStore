@@ -90,13 +90,8 @@ export const cartSlice = createSlice({
             }
         },
 
-        calculatePrice: (state: CartState, action: PayloadAction<{price: number}>) => {
-            const subtotle = action.payload.price
-            console.log('subtotle', subtotle)
-
-        }
     }
 })
 
-export const {addCart, addQuantity, decreaseQuantity, removeCart} = cartSlice.actions;
+export const {addCart, addQuantity, decreaseQuantity, removeCart,} = cartSlice.actions;
 export default cartSlice.reducer

@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addCart} from "@/features/cart/model/cartSlice";
 import {addWishList} from "@/features/open-wishlist/model/wishListSlice";
 import {RootState} from "@/store/store";
+import {calculateTotalSum} from "@/features/calculateTotalSum/modal/calculateTotalSumSlice";
 
 interface ProductCardProps {
     id: string
@@ -32,6 +33,14 @@ export default function ProductCard(
 
     const dispatch = useDispatch();
     const itemsInCart = useSelector((state: RootState) => state.cart)
+    const stateSum = useSelector((state: RootState) => state.totalSum)
+
+    console.log('stateSum', stateSum);
+
+    const handleAddItemInCart = () => {
+        dispatch(addCart({id, name: nameProduct, price, img: imageProduct, quantity: 1}))
+        dispatch(calculateTotalSum({id, price}))
+    }
 
     return (
         <div className='h-[352px] w-[164px] md:h-[432px] md:w-[268px] bg-[#F6F6F6] rounded-[9px] flex flex-col items-center justify-around'>
@@ -62,7 +71,7 @@ export default function ProductCard(
                             </p>
                         )}
                 </div>
-                <Button onClick={() => dispatch(addCart({id, name: nameProduct, price, img: imageProduct, quantity: 1}))} borderColor={'black'} backgroundColor={'black'} textColor={'white'} width={140}>
+                <Button onClick={handleAddItemInCart} borderColor={'black'} backgroundColor={'black'} textColor={'white'} width={140}>
                     Buy now
                 </Button>
             </div>

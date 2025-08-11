@@ -5,7 +5,7 @@ import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {RootState} from "@/store/store";
 import {addQuantity, decreaseQuantity, removeCart} from "@/features/cart/model/cartSlice";
-
+import {decreaseTotalSum} from "@/features/calculateTotalSum/modal/calculateTotalSumSlice";
 
 type CartProduct = {
     id: string ;
@@ -32,6 +32,10 @@ export default function ProductCardInCart() {
             <p className='text-lg font-semibold'>Your cart is empty...</p>
         )
     }
+    const handleDeleteItemInCart = (product: Pick<CartProduct, 'id' | 'price'>) => {
+        dispatch(removeCart({id: product.id}));
+        dispatch(decreaseTotalSum({price: product.price}));
+    }
     return (
         <div>
             {cartItems.map(product => (
@@ -54,7 +58,7 @@ export default function ProductCardInCart() {
                         </div>
                         {/* Используем product.price вместо фиксированной цены */}
                         <p className='font-medium text-[20px]'>${product.price}</p>
-                        <button onClick={() => dispatch(removeCart({id: product.id}))}>X</button>
+                        <button onClick={() => handleDeleteItemInCart(product)}>X</button>
                     </div>
                     <div className='border-[0.5px] border-[#A3A3A3]'></div>
                 </div>

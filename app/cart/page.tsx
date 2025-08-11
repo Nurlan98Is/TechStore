@@ -2,8 +2,13 @@
 import Button from "@/shared/ui/Button";
 import ProductCardInCart from "@/entities/producInCart/ui/ProductCardInCart";
 import {useRouter} from "next/navigation";
+import {useSelector} from "react-redux";
+import {RootState} from "@/store/store";
+
 export default function CartPage() {
     const router = useRouter();
+    const state = useSelector((state: RootState) => state.totalSum);
+    console.log('state in shopping cart',state)
     return (
         <div className='flex my-[112px] mx-[160px] xl:h-[656px]'>
 
@@ -29,22 +34,26 @@ export default function CartPage() {
                             </div>
                         </div>
                         <div>
-                            <div className='flex justify-between mb-[16px]'>
-                                <p>Subtotale</p>
-                                <p>$2347</p>
-                            </div>
-                            <div className='flex justify-between mb-[8px]'>
-                                <p>Estimated Tax</p>
-                                <p>$50</p>
-                            </div>
-                            <div className='flex justify-between mb-[16px]'>
-                                <p>Estimated shipping & Handling</p>
-                                <p>$29</p>
-                            </div>
-                            <div className='flex justify-between mb-[16px]'>
-                                <p>Total</p>
-                                <p>$2426</p>
-                            </div>
+
+                                <div>
+                                    <div className='flex justify-between mb-[16px]'>
+                                        <p>Subtotale</p>
+                                        <p>${state?.subTotal}</p>
+                                    </div>
+                                    <div className='flex justify-between mb-[8px]'>
+                                        <p>Estimated Tax</p>
+                                        <p>${state?.estimatedTax}</p>
+                                    </div>
+                                    <div className='flex justify-between mb-[16px]'>
+                                        <p>Estimated shipping & Handling</p>
+                                        <p>${state?.estimatedShipping}</p>
+                                    </div>
+                                    <div className='flex justify-between mb-[16px]'>
+                                        <p>Total</p>
+                                        <p>${state?.total}</p>
+                                    </div>
+                                </div>
+
                         </div>
                     </form>
                     <Button text={'Checkout'} width={408} textColor={'white'} backgroundColor={'black'} onClick={() => router.push('select-address')}/>
