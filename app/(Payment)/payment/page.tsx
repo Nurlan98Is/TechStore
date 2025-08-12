@@ -1,33 +1,30 @@
+'use client'
 import CreditCard from "@/entities/creditCard/CreditCard";
+import TotalSum from "@/entities/order-summury/ui/TotalSum";
+import ProductInPayment from "@/entities/cart/ui/ProductInPayment";
 import Button from "@/shared/ui/Button";
+import {useSelector} from "react-redux";
+import {RootState} from "@/store/store";
+
+
 export default function PaymentPage() {
+    const state = useSelector((state: RootState) => state.cart);
     return (
         <div className='flex justify-around mb-[72px]'>
-            <div className='lx:w-[512px] xl:h-[704px] border border-[#D1D1D8] rounded-[10px] px-[24px] py-[32px]'>
+            <div className='xl:w-[512px] xl:h-[704px] border border-[#D1D1D8] rounded-[10px] px-[24px] py-[32px]'>
                 <p>Summary</p>
-                <div></div>
+                <div>
+                    {state.map((product) => (
+                        <ProductInPayment name={product.name} price={product.price} img={product.img.src} key={product.id}/>
+                    ))}
+                </div>
                 <div>
                     <p>Address</p>
                     <p>1131 Dusty Townline, Jacksonville, TX 40322</p>
                     <p>Shipment method</p>
                     <p>Free</p>
                     <div>
-                        <div className='flex justify-between mb-[16px]'>
-                            <p>Subtotale</p>
-                            <p>$2347</p>
-                        </div>
-                        <div className='flex justify-between mb-[8px]'>
-                            <p>Estimated Tax</p>
-                            <p>$50</p>
-                        </div>
-                        <div className='flex justify-between mb-[16px]'>
-                            <p>Estimated shipping & Handling</p>
-                            <p>$29</p>
-                        </div>
-                        <div className='flex justify-between mb-[16px]'>
-                            <p>Total</p>
-                            <p>$2426</p>
-                        </div>
+                       <TotalSum/>
                     </div>
                 </div>
 
