@@ -3,6 +3,7 @@ import Button from "@/shared/ui/Button";
 import { useState } from "react";
 import ModalWindowAuth from "@/entities/modalWindow/ModalWindowAuth/ui/ModalWindowAuth";
 
+
 export default function AuthToolTip({isOpenAuthToolTip}:{ isOpenAuthToolTip: boolean}) {
    if (!isOpenAuthToolTip) {
        return null

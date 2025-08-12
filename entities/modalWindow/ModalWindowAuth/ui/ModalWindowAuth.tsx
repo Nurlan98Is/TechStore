@@ -4,6 +4,7 @@ import {black} from "next/dist/lib/picocolors";
 import Image from "next/image";
 import ButtonClose from '../../../../public/svg/Buttons/buttonClose.svg'
 import {useState, useEffect} from "react";
+import { signIn } from "next-auth/react";
 
 interface ModalWindowAuthProps {
     isOpen: boolean;
@@ -38,7 +39,9 @@ export default function ModalWindowAuth( { isOpen, onClick} : ModalWindowAuthPro
                         <Image src={ButtonClose} alt={'Close'} />
                     </button>
                 </div>
-                <form className='flex flex-col justify-around items-center'>
+                <form
+                    className='flex flex-col justify-around items-center'
+                >
                     <input
                         placeholder='Phone'
                         className='w-[70%] h-[40px] bg-gray-200 rounded-[8px] text-[16px] mb-[30px] p-[10px]'
@@ -52,7 +55,7 @@ export default function ModalWindowAuth( { isOpen, onClick} : ModalWindowAuthPro
                         Sign in
                     </Button>
                 </form>
-                <button className='hover:cursor-pointer'>Sign in by email</button>
+                <button className='hover:cursor-pointer' onClick={() => signIn('google')}>Sign in by email</button>
                 <p className='text-xs text-gray-500'>
                     By clicking 'Log in', you agree to the Privacy Policy, Terms of Service, and consent to the processing of personal data.
                 </p>
