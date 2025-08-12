@@ -25,7 +25,7 @@ export default function BannerPromotion() {
                 <Button text={'Shop Now'} borderColor={'white'} textColor={'white'}/>
             </div>
             <div>
-                <Image src={IphoneImage} alt={'iphoneBanner'} className={'ml-[220px]'}/>
+                <Image src={IphoneImage} alt={'iphoneBanner'} className={'ml-[164px]'}/>
                 <Image src={WatchImage} alt={'watchBanner'} />
             </div>
         </div>

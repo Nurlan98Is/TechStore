@@ -6,7 +6,7 @@ import ProductCase from "@/widgets/productShowCase/ui/ProductCase";
 import ProductsCardRow from "@/widgets/ProductCardsRow/ui/ProductCardsRow";
 import ProductDiscountCase from "@/widgets/productShowCase/ui/ProductDiscountCase";
 import BannerPromotion from "@/widgets/Banner/ui/BannerPromotion";
-import AuthToolTip from "@/entities/user/auth/AuthToolTip";
+
 
 
 export default async function Home() {
@@ -26,7 +26,6 @@ export default async function Home() {
     <div>
         <HeroBanner/>
         <Banner/>
-        <AuthToolTip/>
       <Category/>
         <ProductCase  />
         <ProductsCardRow/>

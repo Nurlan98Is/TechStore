@@ -3,10 +3,10 @@ import Image from "next/image";
 import UserIcon from '../../../public/userIcon.svg'
 import AuthToolTip from "@/entities/user/auth/AuthToolTip";
 
-export default function UserAccess() {
+export default function UserAccess({onClick}: {onClick: () => void}) {
     const isAuth = false
     return (
-        <>
+        <button onClick={onClick}>
            <Image
                src={UserIcon}
                alt='userIcon'
@@ -14,6 +14,6 @@ export default function UserAccess() {
                height={24}
                className='hover:cursor-pointer'
            />
-        </>
+        </button>
     )
         }
