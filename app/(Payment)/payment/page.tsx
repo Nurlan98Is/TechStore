@@ -4,6 +4,7 @@ import TotalSum from "@/entities/order-summury/ui/TotalSum";
 import ProductInPayment from "@/entities/cart/ui/ProductInPayment";
 import Button from "@/shared/ui/Button";
 import {useSelector} from "react-redux";
+import UserCardForm from "@/entities/user/userCardForm/ui/UserCardForm";
 import {RootState} from "@/store/store";
 
 
@@ -36,17 +37,7 @@ export default function PaymentPage() {
                     <button>PayPal</button>
                     <button>PayPal Credit</button>
                 </div>
-                <div className='py-[40px]'>
-                    <CreditCard/>
-                </div>
-                <div className='flex flex-col gap-[16px]'>
-                    <input placeholder='Cardholder name' className='xl:w-[512px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'/>
-                    <input placeholder='Card Number' className='xl:w-[512px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'/>
-                    <div className='flex justify-between'>
-                        <input placeholder='Exp.Date' className='xl:w-[248px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'/>
-                        <input placeholder='CVV' className='xl:w-[248px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'/>
-                    </div>
-                </div>
+               <UserCardForm/>
                 <div className='flex my-[49px]'>
                     <input type='checkbox'/>
                     <p className='pl-[5px]'>Same as billing address</p>

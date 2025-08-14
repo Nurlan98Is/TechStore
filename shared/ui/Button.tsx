@@ -11,12 +11,14 @@ interface ButtonProps {
     fontSize: number | string;
     className: string
     onClick: () => void
+    type: "submit" | "reset" | "button"
 }
 
-export default function Button ( { children, text, borderColor, textColor, backgroundColor, width, fontSize, className, onClick} : Partial<ButtonProps>) {
+export default function Button ( {type, children, text, borderColor, textColor, backgroundColor, width, fontSize, className, onClick} : Partial<ButtonProps>) {
 
     return (
         <button
+            type={type}
             className={`${className} h-[56px] w-[80%] md:w-[184px] rounded-[6px] border font-medium text-[16px] hover:cursor-pointer`}
             onClick={onClick}
             style={{
