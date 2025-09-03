@@ -1,11 +1,16 @@
+'use client'
 import CreditCard from "@/entities/creditCard/CreditCard";
 import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
 import {setCreditCards} from "@/features/user-access/modal/userSlice";
 import Button from "@/shared/ui/Button";
-export default function UserCardForm () {
+import {useState} from "react";
+export default function UpdateUserCardForm () {
     const {register, handleSubmit} = useForm();
     const dispatch = useDispatch();
+
+    const [isCardHolder, setCardHolder] = useState('')
+    const [isCardNumber, setCardNumber] = useState('')
 
     const onSubmit = (data) => {
         dispatch(setCreditCards({
@@ -18,18 +23,20 @@ export default function UserCardForm () {
     return (
         <div>
             <div className='py-[40px]'>
-                <CreditCard/>
+                <CreditCard cardHolder={isCardHolder} cardNumber={isCardNumber}/>
             </div>
                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-[16px]'>
                     <input
                         placeholder='CardholderName'
                         className='xl:w-[512px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'
                         {...register('cardholderName')}
+                        onChange={(e) => setCardHolder(e.target.value)}
                     />
                     <input
                         placeholder='Card Number'
                         className='xl:w-[512px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'
                         {...register('cardNumber')}
+                        onChange={(e) => setCardNumber(e.target.value)}
                     />
                     <div className='flex justify-between'>
                         <input

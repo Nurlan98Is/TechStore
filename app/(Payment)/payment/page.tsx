@@ -4,26 +4,34 @@ import TotalSum from "@/entities/order-summury/ui/TotalSum";
 import ProductInPayment from "@/entities/cart/ui/ProductInPayment";
 import Button from "@/shared/ui/Button";
 import {useSelector} from "react-redux";
-import UserCardForm from "@/entities/user/userCardForm/ui/UserCardForm";
+import UpdateUserCardForm from "@/entities/user/userCardForm/ui/UpdateUserCardForm";
 import {RootState} from "@/store/store";
+import Slider from "@/features/carusel/ui/Slider";
 
 
 export default function PaymentPage() {
     const state = useSelector((state: RootState) => state.cart);
+    const creditCards = useSelector((state: RootState) => state.user.creditCards);
     return (
         <div className='flex justify-around mb-[72px]'>
             <div className='xl:w-[512px] xl:h-[704px] border border-[#D1D1D8] rounded-[10px] px-[24px] py-[32px]'>
-                <p>Summary</p>
+                <p className='text-[20px] font-medium mb-[24px]'>Summary</p>
                 <div>
                     {state.map((product) => (
                         <ProductInPayment name={product.name} price={product.price} img={product.img.src} key={product.id}/>
                     ))}
                 </div>
                 <div>
-                    <p>Address</p>
-                    <p>1131 Dusty Townline, Jacksonville, TX 40322</p>
-                    <p>Shipment method</p>
-                    <p>Free</p>
+                    <div className='flex flex-col justify-around h-[136px]'>
+                        <div className='flex flex-col justify-around h-[72px]'>
+                            <p className='text-[#545454] font-medium text-[14px]'>Address</p>
+                            <p>1131 Dusty Townline, Jacksonville, TX 40322</p>
+                        </div>
+                        <div className='flex flex-col justify-around h-[48px]'>
+                            <p className='text-[#545454] font-medium text-[14px]'>Shipment method</p>
+                            <p>Free</p>
+                        </div>
+                    </div>
                     <div>
                        <TotalSum/>
                     </div>
@@ -32,12 +40,16 @@ export default function PaymentPage() {
             </div>
             <div className='lx:w-[512px] xl:h-[704px]'>
                 <p className='mb-[24px]'>Payment</p>
-                <div className='flex gap-[56px]'>
+                <div className='flex gap-[56px] mb-[32px]'>
                     <button>Credit Card</button>
                     <button>PayPal</button>
                     <button>PayPal Credit</button>
                 </div>
-               <UserCardForm/>
+                <Slider>
+                    {creditCards.map((card) => (
+                        <CreditCard cardHolder={card.cardHolder} cardNumber={card.cardNumber}/>
+                    ))}
+                </Slider>
                 <div className='flex my-[49px]'>
                     <input type='checkbox'/>
                     <p className='pl-[5px]'>Same as billing address</p>
