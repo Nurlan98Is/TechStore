@@ -33,6 +33,7 @@ export default function ProductCase() {
                         nameProduct={product.name}
                         price={product.price}
                         id={product.id}
+                        key={product.id}
                     />
                 ))}
                 {/*<ProductCard*/}

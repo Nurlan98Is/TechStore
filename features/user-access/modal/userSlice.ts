@@ -9,12 +9,7 @@ const loadUserFromSessionStorage = () => {
         if (serializeUser === null) {
             return {
                 user: {},
-                creditCards: [{
-                    cardNumber: '',
-                    cardHolder: '',
-                    dateExp: '',
-                    cvv: '',
-                }],
+                creditCards: [],
                 addresses: []
             }
         } else {
@@ -22,6 +17,11 @@ const loadUserFromSessionStorage = () => {
         }
     } catch (error) {
         console.warn(`Could not load user from session storage`, error)
+        return {
+            user: {},
+            creditCards: [],
+            addresses: []
+        }
     }
 }
 const initialState = loadUserFromSessionStorage()
@@ -38,6 +38,11 @@ export const userSlice = createSlice({
                 dateExp: action.payload.dateExp,
                 cvv: action.payload.cvv,
             })
+            try {
+                sessionStorage.setItem("user", JSON.stringify(state))
+            } catch (error) {
+                console.warn(`Could not load user from session storage`, error)
+            }
         }
     }
 })

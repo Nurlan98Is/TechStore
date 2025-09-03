@@ -7,12 +7,17 @@ import CreditCard from "@/entities/creditCard/CreditCard";
 import Button from "@/shared/ui/Button";
 import {useState} from "react";
 import UserCardForm from "@/entities/user/userCardForm/ui/UserCardForm";
-import Carousel from "@/features/carusel/ui/Сarousel";
-
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Slider from '../../features/carusel/ui/Slider'
+import {useSelector} from "react-redux";
 export default function PersonalPage() {
     const session = useSession();
     const {data} = session
     const [updateCreditCard, setUpdateCreditCard] = useState(false);
+    const creditCards = useSelector(state => state.user.creditCards);
+    console.log('stateCard',creditCards);
     return(
         <div className='flex items-start justify-around my-[112px] mx-[160px]'>
             <div className='flex flex-col gap-5'>
@@ -29,8 +34,26 @@ export default function PersonalPage() {
                         </div>
                         :
                         <>
-                            <CreditCard/>
-                            <Button borderColor={'black'} textColor={'white'} backgroundColor={'black'} onClick={() => setUpdateCreditCard(true)}>Update Card</Button>
+                            <Slider>
+                                {creditCards && creditCards.length > 0 ? (
+                                    creditCards.map((creditCard) => (
+                                        <CreditCard
+                                            key={creditCard.id}
+                                            cardNumber={creditCard?.cardNumber}
+                                            cardHolder={creditCard?.cardHolder}
+                                        />
+                                    ))
+                                ) : (
+                                    // Показываем заглушку если карт нет
+                                    <div className="text-center p-4">
+                                        <p>No credit cards added yet</p>
+                                    </div>
+                                )}
+                            </Slider>
+                            {creditCards ?
+                                <Button borderColor={'black'} textColor={'white'} backgroundColor={'black'} onClick={() => setUpdateCreditCard(true)}>Add Card</Button>
+                                :
+                                <Button borderColor={'black'} textColor={'white'} backgroundColor={'black'} onClick={() => setUpdateCreditCard(true)}>Update Card</Button>}
                         </>
                     }
                 </div>
@@ -49,7 +72,6 @@ export default function PersonalPage() {
                     <UserAddressInfoForm lable={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
                     <UserAddressInfoForm lable={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
                 </div>
-                <Carousel/>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import {MasterCardSvgFn} from "@/entities/SvgFn/EMVchipCreditCardSvgFn";
 import {useSession} from "next-auth/react";
 import {useSelector} from "react-redux";
 import {RootState} from "@/store/store";
-export default function CreditCard() {
+export default function CreditCard({cardNumber, cardHolder}) {
     const session = useSession();
     const state = useSelector((state: RootState) => state.user.creditCards);
     console.log('state in card', state)
@@ -12,9 +12,9 @@ export default function CreditCard() {
             <div>
                 <EMVchipCreditCardSvgFn/>
             </div>
-            <p className='text-white text-[18px] font-semibold w-[100%]'>{state[1]?.cardNumber}</p>
+            <p className='text-white text-[18px] font-semibold w-[100%]'>{cardNumber}</p>
             <div className='flex justify-between'>
-                <p className='text-[#AEAEAE]'>{state[1]?.cardHolder}</p>
+                <p className='text-[#AEAEAE]'>{cardHolder}</p>
                 <MasterCardSvgFn/>
             </div>
         </div>
