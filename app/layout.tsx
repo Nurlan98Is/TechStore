@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/widgets/Header";
+import Header from "@/widgets/Header/ui/Header";
 import Footer from "@/widgets/Footer/ui/Footer";
 import StoreProvider from "@/store/storeProvider";
 import {SessionProviderClient} from "@/app/SessionProvider";

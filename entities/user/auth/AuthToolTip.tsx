@@ -11,7 +11,7 @@ export default function AuthToolTip({isOpenAuthToolTip}:{ isOpenAuthToolTip: boo
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className=' w-[300px] h-[200px] px-[20px] rounded-lg absolute z-[10] top-[14%] right-[5%] bg-white flex flex-col items-center justify-around'>
+        <div className=' w-[300px] h-[200px] px-[20px] rounded-lg absolute z-[10] top-[51%] right-[10%] md:top-[14%] md:right-[5%] bg-white flex flex-col items-center justify-around'>
              <p className='text-lg font-normal'>
                  Sign in or register to get personalized discounts, make purchases, and earn referral points for your friends.
              </p>

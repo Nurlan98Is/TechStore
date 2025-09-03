@@ -10,7 +10,7 @@ export default function IconButtonMenu({onClick}: {onClick: () => void}) {
     const {status, data} = useSession();
     console.log(data)
     return (
-        <div className='hidden w-[144px] lg:flex justify-around items-center'>
+        <div className='w-[100%] md:w-[144px] mt-[30px] md:mt-[0px] flex justify-around items-center'>
             <WishListButton/>
             <CartIconButton/>
             {status === "authenticated" ?
