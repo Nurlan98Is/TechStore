@@ -14,8 +14,9 @@ import Slider from '../../features/carusel/ui/Slider'
 import {useSelector} from "react-redux";
 import {RootState} from "@/store/store";
 import AddUserCardForm from "@/entities/user/userCardForm/ui/AddUserCardForm";
-export default function PersonalPage() {
+import {CardTypesInMapsFn} from "@/entities/creditCard/types/CreditCardTypes";
 
+export default function PersonalPage() {
     const session = useSession();
     const {data} = session
 
@@ -28,7 +29,7 @@ export default function PersonalPage() {
     return(
         <div className='flex items-start justify-around my-[112px] mx-[160px]'>
             <div className='flex flex-col gap-5'>
-                <Image src={data?.user?.image} alt={'Avatar'} width={300} height={300} className='rounded-[50%]' />
+                <Image src={data?.user?.image || '/default-avatar.png'} alt={'Avatar'} width={300} height={300} className='rounded-[50%]' />
                 <div className='flex flex-col gap-5 items-center'>
                     {isClickedChange
                         ?
@@ -47,7 +48,7 @@ export default function PersonalPage() {
                         <>
                             <Slider>
                                 {creditCards && creditCards.length > 0 ? (
-                                    creditCards.map((creditCard) => (
+                                    creditCards.map((creditCard: CardTypesInMapsFn) => (
                                         <CreditCard
                                             key={creditCard.id}
                                             cardNumber={creditCard?.cardNumber}
@@ -74,16 +75,16 @@ export default function PersonalPage() {
             <div>
                 <div className='flex flex-col gap-2.5 mb-[10px] border border-[#BDBDBD] rounded-2xl p-[20px]'>
                     <p className='text-[20px] font-bold'>Main Information</p>
-                    <UserInfoForm lable={'Email'} value={data?.user?.email} />
-                    <UserInfoForm lable={'Phone'} value={'+79111113778'}/>
-                    <UserInfoForm lable={'Name'} value={data?.user?.name} />
+                    <UserInfoForm label={'Email'} value={data?.user?.email} />
+                    <UserInfoForm label={'Phone'} value={'+79111113778'}/>
+                    <UserInfoForm label={'Name'} value={data?.user?.name} />
                 </div>
                 <div className='flex flex-col gap-2.5 border border-[#BDBDBD] rounded-2xl p-[20px]'>
                     <p className='text-[20px] font-bold'>Addresses</p>
-                    <UserAddressInfoForm lable={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
-                    <UserAddressInfoForm lable={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
-                    <UserAddressInfoForm lable={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
-                    <UserAddressInfoForm lable={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
+                    <UserAddressInfoForm label={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
+                    <UserAddressInfoForm label={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
+                    <UserAddressInfoForm label={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
+                    <UserAddressInfoForm label={'Address'} value={'222444 Челябинская обл. Верхнуральский р-н п.Подольский ул.Школьная 33'}/>
                 </div>
             </div>
         </div>

@@ -4,22 +4,32 @@ import TotalSum from "@/entities/order-summury/ui/TotalSum";
 import ProductInPayment from "@/entities/cart/ui/ProductInPayment";
 import Button from "@/shared/ui/Button";
 import {useSelector} from "react-redux";
-import UpdateUserCardForm from "@/entities/user/userCardForm/ui/UpdateUserCardForm";
+//import UpdateUserCardForm from "@/entities/user/userCardForm/ui/UpdateUserCardForm";
 import {RootState} from "@/store/store";
 import Slider from "@/features/carusel/ui/Slider";
+import {CardTypesInMapsFn} from "@/entities/creditCard/types/CreditCardTypes";
 
 
 export default function PaymentPage() {
     const state = useSelector((state: RootState) => state.cart);
     const creditCards = useSelector((state: RootState) => state.user.creditCards);
+    console.log('State type:', typeof state);
+    console.log('Is array:', Array.isArray(state));
     return (
         <div className='flex justify-around mb-[72px]'>
             <div className='xl:w-[512px] xl:h-[704px] border border-[#D1D1D8] rounded-[10px] px-[24px] py-[32px]'>
                 <p className='text-[20px] font-medium mb-[24px]'>Summary</p>
                 <div>
-                    {state.map((product) => (
-                        <ProductInPayment name={product.name} price={product.price} img={product.img.src} key={product.id}/>
-                    ))}
+                    {state.map((product) => {
+                        return (
+                            <ProductInPayment
+                                name={product.name}
+                                price={product.price}
+                                img={product.img.src}
+                                key={product.id}
+                            />
+                        );
+                    })}
                 </div>
                 <div>
                     <div className='flex flex-col justify-around h-[136px]'>
@@ -46,8 +56,8 @@ export default function PaymentPage() {
                     <button>PayPal Credit</button>
                 </div>
                 <Slider>
-                    {creditCards.map((card) => (
-                        <CreditCard cardHolder={card.cardHolder} cardNumber={card.cardNumber}/>
+                    {creditCards.map((card: CardTypesInMapsFn) => (
+                        <CreditCard cardHolder={card.cardHolder} cardNumber={card.cardNumber} key={card.id}/>
                     ))}
                 </Slider>
                 <div className='flex my-[49px]'>

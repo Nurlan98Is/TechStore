@@ -1,6 +1,7 @@
 import Button from "@/shared/ui/Button";
+import {SignInWithEmailPropsTypes} from "@/entities/modalWindow/ModalWindowAuth/types/Types";
 
-export default function SignInWithEmail({signInByPhone}) {
+export default function SignInWithEmail({signInByPhone}: SignInWithEmailPropsTypes) {
     return (
         <div className='flex flex-col'>
             <form

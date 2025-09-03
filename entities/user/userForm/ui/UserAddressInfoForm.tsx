@@ -1,16 +1,16 @@
 'use client'
 
 import {useState} from "react";
+import {UserAddressInfoFormTypesProps} from "@/entities/user/userForm/types/UserFormTypes";
 
-
-export default function UserAddressInfoForm({lable, value}) {
+export default function UserAddressInfoForm({label, value}: UserAddressInfoFormTypesProps) {
     const [isChange, setIsChange] = useState<boolean>(false);
     return (
         <div
             className='rounded-2xl flex w-[380px] xl:w-[500px] h-[70px] justify-between items-center border border-[#BDBDBD] '>
             <div className='rounded-l-2xl bg-gray-100 w-[20%] h-[100%] flex items-center justify-center'>
                 <label>
-                    {lable}
+                    {label}
                 </label>
             </div>
             <div className='flex justify-between w-[100%] h-[100%]'>
@@ -19,7 +19,7 @@ export default function UserAddressInfoForm({lable, value}) {
                     (
                         <>
                             <div className='w-[100%] h-[100%] flex items-center justify-start pl-[10px]'>
-                                <input defaultValue={value} className='w-[100%] h-[100%] focus:outline-0' />
+                                <input defaultValue={value ?? ''} className='w-[100%] h-[100%] focus:outline-0' />
                             </div>
                             <div className='rounded-r-2xl bg-gray-100 w-[35%] h-[100%] flex items-center justify-center'>
                                 <button

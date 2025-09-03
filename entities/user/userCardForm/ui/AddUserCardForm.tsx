@@ -5,18 +5,19 @@ import {useDispatch} from "react-redux";
 import {setCreditCards} from "@/features/user-access/modal/userSlice";
 import Button from "@/shared/ui/Button";
 import {useState} from "react";
+import {UserCardFormDataTypes} from "@/entities/user/userCardForm/types/UserCardFormDataTypes";
 export default function AddUserCardForm () {
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit} = useForm<UserCardFormDataTypes>();
     const dispatch = useDispatch();
 
     const [isCardHolder, setCardHolder] = useState('')
     const [isCardNumber, setCardNumber] = useState('')
 
-    const onSubmit = (data) => {
+    const onSubmit = (data: UserCardFormDataTypes) => {
         dispatch(setCreditCards({
             cardNumber: data.cardNumber,
-            cardHolder: data.cardholderName,
-            dateExp: data.cardDateExp,
+            cardHolder: data.cardHolder,
+            dateExp: data.dateExp,
             cvv: data.cvv
         }));
     };
@@ -29,7 +30,7 @@ export default function AddUserCardForm () {
                 <input
                     placeholder='CardholderName'
                     className='xl:w-[512px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'
-                    {...register('cardholderName')}
+                    {...register('cardHolder')}
                     onChange={(e) => setCardHolder(e.target.value)}
                 />
                 <input
@@ -42,7 +43,7 @@ export default function AddUserCardForm () {
                     <input
                         placeholder='Exp.Date'
                         className='xl:w-[248px] xl:h-[48px] border border-[#CECECE] rounded-[7px] px-[16px] py-[12px]'
-                        {...register('cardDateExp')}
+                        {...register('dateExp')}
                     />
                     <input
                         placeholder='CVV'
