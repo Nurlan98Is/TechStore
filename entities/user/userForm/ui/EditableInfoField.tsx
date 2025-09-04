@@ -4,7 +4,7 @@ import { useState } from "react"
 
 interface EditableInfoFieldProps {
     label: string
-    value?: string
+    value?: string | undefined | null
     onSave?: (newValue: string) => void
     multiline?: boolean // если это адрес, можно делать textarea
 }

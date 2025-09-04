@@ -1,8 +1,6 @@
 'use client'
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import UserInfoForm from "@/entities/user/userForm/ui/UserInfoForm";
-import UserAddressInfoForm from "@/entities/user/userForm/ui/UserAddressInfoForm";
 import CreditCard from "@/entities/creditCard/CreditCard";
 import Button from "@/shared/ui/Button";
 import { useState } from "react";
