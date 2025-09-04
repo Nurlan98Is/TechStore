@@ -15,7 +15,7 @@ export default function SelectAddressForm() {
                     <p className='mb-[8px]'>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
                     <p>(209) 555-3331</p>
                 </div>
-                <div className='w-[72px]'>
+                <div className='w-[72px] flex'>
                     <button className='mr-[30px]'>
                         <PencilButtonSvg/>
                     </button>

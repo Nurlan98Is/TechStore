@@ -6,7 +6,7 @@ import AddAddress from "@/features/address/ui/AddAddress";
 export default function SelectAddressPage() {
     const router = useRouter();
     return (
-        <div className='px-[160px] mb-[48px] flex flex-col items-end'>
+        <div className='py-[48px] px-[16px] xl:px-[160px] xl:mb-[48px] flex flex-col xl:items-end'>
             <div>
                 <p className='text-[20px] font-semibold pb-[32px]'>Select Address</p>
                 <div className='flex flex-col items-center justify-center'>
@@ -19,8 +19,8 @@ export default function SelectAddressPage() {
             </div>
 
             <div>
-                <Button borderColor='black' onClick={() => router.push('/cart')}>Back</Button>
-                <Button className='ml-[24px]' textColor='white' backgroundColor='black' borderColor='black' onClick={() => router.push('/shipping')}>Next</Button>
+                <Button borderColor='black' width={156} onClick={() => router.push('/cart')}>Back</Button>
+                <Button className='ml-[24px]' width={156} textColor='white' backgroundColor='black' borderColor='black' onClick={() => router.push('/shipping')}>Next</Button>
             </div>
         </div>
     )
