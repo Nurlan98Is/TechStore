@@ -25,7 +25,7 @@ export default function NavigationInPaymentPages() {
 
 
     return (
-        <div className='w-full flex justify-around xl:h-[184px]'>
+        <div className='w-full flex justify-around h-[112px] xl:h-[184px]'>
             {/* Шаг 1: Адрес */}
             <div className='flex items-center justify-center'>
                 <AddressIcon isActive={activeStep === 1}/>

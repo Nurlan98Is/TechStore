@@ -6,7 +6,7 @@ import AddAddress from "@/features/address/ui/AddAddress";
 export default function SelectAddressPage() {
     const router = useRouter();
     return (
-        <div className='py-[48px] px-[16px] xl:px-[160px] xl:mb-[48px] flex flex-col xl:items-end'>
+        <div className='pb-[48px] px-[16px] xl:px-[160px] xl:mb-[48px] flex flex-col xl:items-end'>
             <div>
                 <p className='text-[20px] font-semibold pb-[32px]'>Select Address</p>
                 <div className='flex flex-col items-center justify-center'>

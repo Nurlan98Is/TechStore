@@ -5,7 +5,7 @@ import SelectShippingMethod from "@/features/address/ui/SelectShippingMethod";
 export default function ShippingPage() {
     const router = useRouter();
     return (
-        <div className='flex flex-col items-center justify-center pb-[48px] mt-[48px] md:mt-[0px]'>
+        <div className='flex flex-col items-center justify-center pb-[48px] md:mt-[0px]'>
             <div className='mb-[30px] xl:mb-[224px]'>
                 <p className='pb-[32px] font-semibold text-[20px]'>Shipment Method</p>
                 <SelectShippingMethod/>
