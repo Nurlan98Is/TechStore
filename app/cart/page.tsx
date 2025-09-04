@@ -6,15 +6,15 @@ import TotalSum from "@/entities/order-summury/ui/TotalSum";
 export default function CartPage() {
     const router = useRouter();
     return (
-        <div className='flex my-[112px] mx-[160px] xl:h-[656px]'>
+        <div className='flex flex-col xl:flex-row mx-[10px] my-[30px] md:my-[112px] md:mx-[160px] xl:h-[656px]'>
 
-                <div className='xl:w-[536px] xl:h-[100%] mr-[40px]'>
+                <div className='xl:w-[536px] mb-[30px] md:mb-[30px] xl:mb-[0px] xl:h-[100%] mr-[40px]'>
                     <p className='font-bold text-[20px] mb-[40px]'>Shopping Cart</p>
                     <ProductCardInCart/>
                 </div>
 
-                <div className='border border-[#EDEDED] xl:w-[536px] xl:py-[56px] xl:px-[64px] xl:h-[100%]'>
-                    <form className='w-[100%] h-[90%]'>
+                <div className='border flex flex-col items-center border-[#EDEDED] w-[100%] xl:w-[536px] xl:pb-[56px] xl:px-[64px] xl:h-[100%]'>
+                    <form className='w-[100%] md:w-[100%] h-[90%] px-[16px] py-[56px]'>
                         <p className='mb-[40px] font-bold text-[20px]'>Order Summery</p>
                         <div className='mb-[24px]'>
                             <p>Discount code/Promo code</p>
@@ -33,7 +33,7 @@ export default function CartPage() {
                             <TotalSum/>
                         </div>
                     </form>
-                    <Button text={'Checkout'} width={408} textColor={'white'} backgroundColor={'black'} onClick={() => router.push('select-address')}/>
+                    <Button text={'Checkout'} className='mb-[10px] md:mb-[30px] xl:mb-[0px]' width={354} textColor={'white'} backgroundColor={'black'} onClick={() => router.push('select-address')}/>
                 </div>
 
         </div>

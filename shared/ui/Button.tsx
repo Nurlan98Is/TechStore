@@ -7,7 +7,7 @@ interface ButtonProps {
     borderColor: string;
     textColor: string;
     backgroundColor: string;
-    width: number | string;
+    width?: number | string;
     fontSize: number | string;
     className: string
     onClick: () => void
@@ -19,7 +19,7 @@ export default function Button ( {type, children, text, borderColor, textColor, 
     return (
         <button
             type={type}
-            className={`${className} h-[56px] w-[80%] md:w-[184px] rounded-[6px] border font-medium text-[16px] hover:cursor-pointer`}
+            className={`${className} h-[56px] w-[${width}px] md:w-[184px] rounded-[6px] border font-medium text-[16px] hover:cursor-pointer`}
             onClick={onClick}
             style={{
                 fontSize: fontSize,
